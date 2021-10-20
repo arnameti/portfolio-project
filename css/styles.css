@@ -179,7 +179,6 @@ Navbar
 .nav {
   height: 5rem;
   padding: 1rem;
-  /* background-color: red; */
   display: grid;
   align-items: center;
   transition: var(--transition);
@@ -189,13 +188,14 @@ Navbar
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  /* background-color: blue; */
+
 }
 
 .nav-header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
+
 }
 
 .nav-btn {
@@ -205,10 +205,39 @@ Navbar
   font-size: 2rem;
   cursor: pointer;
   justify-self: end;
-
 }
 
+@media screen and (min-width: 768px) {
+  .nav {
+    background: var(--clr-primary-10);
+  }
+  .nav-btn {
+    display: none;
+  }
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    column-gap: 2rem;
+    justify-self: end;
+  }
+  .nav-links a {
+    text-transform: capitalize;
+    color: var(--clr-grey-1);
+    font-weight: bold;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+  }
 
+  .nav-links a:hover {
+    color: var(--clr-primary-5);
+  }
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
 /*
 =============== 
 Sidebar
