@@ -597,10 +597,9 @@ Projects
   .projects-center {
     grid-template-rows: 200px 200px;
     gap: 1rem;
-    grid-template-areas: 
-    "a b b"
-    "a c d"
-    ;
+    grid-template-areas:
+      "a b b"
+      "a c d";
   }
   .project-1 {
     grid-area: a;
@@ -671,12 +670,19 @@ Connect
   max-width: 30rem;
 }
 
-
 .video-banner {
   background: var(--clr-primary-10);
   padding: 3rem 5rem 12rem 5rem;
   text-align: center;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
 }
 
 @media screen and (max-width: 576px) {
@@ -690,6 +696,83 @@ Connect
 Skills
 ===============
 */
+
+
+.skills-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.skills {
+  background: var(--clr-primary-9);
+}
+
+.skills h3 {
+  margin: 1.5rem 0;
+  color: var(--clr-primary-1);
+}
+
+.skill {
+  margin-bottom: 1.25rem;
+}
+
+.skill p {
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  color: var(--clr-primary-1);
+}
+
+.skill-container {
+  background: var(--clr-white);
+  height: 1rem;
+  width: 100%;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.skill-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--clr-primary-5);
+  height: 100%;
+  width: 50%;
+  border-radius: var(--radius);
+}
+
+.value-70 {
+  width: 70%;
+}
+
+.value-80 {
+  width: 80%;
+}
+
+.skill-text {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.skill-text-70 {
+  left: 70%;
+}
+
+.skill-text-80 {
+  left: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-center {
+    grid-template-columns: 1fr; 
+  }
+
+  .skills article {
+    margin-bottom: 2rem;
+  }
+}
+
 /*
 =============== 
 Timeline
