@@ -697,7 +697,6 @@ Skills
 ===============
 */
 
-
 .skills-center {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -765,7 +764,7 @@ Skills
 
 @media screen and (max-width: 768px) {
   .skills-center {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .skills article {
@@ -841,16 +840,49 @@ Timeline
 
 .timeline-item:nth-child(odd) .number {
   right: 0;
-  transform:translate(50%, -50%);
+  transform: translate(50%, -50%);
 }
-
 
 /*
 =============== 
 Blog
 ===============
 */
+.blog {
+  background: var(--clr-grey-10);
+}
+.card {
+  height: 27rem;
+  position: relative;
+  perspective: 1500px;
+}
 
+.card-side {
+  transition: all 2s linear;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-front {
+  background: red;
+}
+
+.card-back {
+  background: green;
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(-0);
+}
 /*
 =============== 
 Footer
